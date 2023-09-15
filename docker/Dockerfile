@@ -9,8 +9,10 @@ FROM $DOCKER_FROM as base
 #Workdir
 WORKDIR /root/Llama2-Chinese
 
+ARG BRANCH="kh"
+
 # 从git上克隆llama2-chinese仓库
-RUN git clone https://github.com/kongh/Llama2-Chinese.git /root/Llama2-Chinese && git checkout kh
+RUN git clone https://github.com/kongh/Llama2-Chinese.git /root/Llama2-Chinese && git checkout $BRANCH
 
 # 使用pip安装requirements.txt
 RUN pip install gekko pandas ninja && pip install -r requirements.txt
