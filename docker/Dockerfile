@@ -27,7 +27,8 @@ RUN pip3 uninstall -y auto-gptq && \
     pip3 install --no-cache-dir auto-gptq==$AUTOGPTQ
 
 #克隆Hugging Face仓库
-RUN  git clone https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat
+# RUN  git clone https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat
+COPY Llama2-Chinese-7b-Chat/ /root/Llama2-Chinese/Llama2-Chinese-7b-Chat/
 
 #开启7860端口
 EXPOSE 7860
