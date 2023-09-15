@@ -34,4 +34,4 @@ COPY Llama2-Chinese-7b-Chat/ /root/Llama2-Chinese/Llama2-Chinese-7b-Chat/
 EXPOSE 7860
 
 #设置启动命令
-ENTRYPOINT ["python", "examples/chat_gradio.py", "--model_name_or_path", "/root/Llama2-Chinese/Llama2-Chinese-7b-Chat/"]
+ENTRYPOINT ["python3", "examples/chat_gradio.py", "--model_name_or_path", "/root/Llama2-Chinese/Llama2-Chinese-7b-Chat/"]
