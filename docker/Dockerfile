@@ -31,6 +31,7 @@ RUN pip3 uninstall -y auto-gptq && \
 # RUN  git clone https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat
 # RUN GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat && cd Llama2-Chinese-7b-Chat && git lfs pull && cd .. 
 RUN GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat
+RUN cd Llama2-Chinese-7b-Chat && git lfs pull && cd .. 
 
 #开启7860端口
 EXPOSE 7860
