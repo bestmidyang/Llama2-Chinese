@@ -15,7 +15,7 @@ ARG BRANCH="kh"
 RUN git clone https://github.com/kongh/Llama2-Chinese.git /root/Llama2-Chinese && git checkout $BRANCH
 
 # 使用pip安装requirements.txt
-RUN pip install gekko pandas ninja && pip install -r requirements.txt
+RUN pip install gekko pandas ninja && pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple
 
 
 # Install AutoGPTQ, overwriting the version automatically installed by text-generation-webui
