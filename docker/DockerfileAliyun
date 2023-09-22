@@ -24,7 +24,7 @@ ENV CUDA_VERSION=""
 ENV GITHUB_ACTIONS=true
 ENV TORCH_CUDA_ARCH_LIST="8.0;8.6+PTX;8.9;9.0" 
 RUN pip3 uninstall -y auto-gptq && \
-    pip3 install --no-cache-dir auto-gptq==$AUTOGPTQ
+    pip3 install --no-cache-dir auto-gptq==$AUTOGPTQ -i https://mirrors.aliyun.com/pypi/simple
 
 #克隆Hugging Face仓库
 # 直接clone会卡死，采用两步进行克隆
