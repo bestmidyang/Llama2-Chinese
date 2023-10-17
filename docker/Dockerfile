@@ -9,7 +9,7 @@ FROM $DOCKER_FROM as base
 #Workdir
 WORKDIR /root/Llama2-Chinese
 
-ARG BRANCH="kh"
+ARG BRANCH="yh"
 
 # 从git上克隆llama2-chinese仓库
 RUN git clone https://github.com/kongh/Llama2-Chinese.git /root/Llama2-Chinese && git checkout $BRANCH
@@ -30,11 +30,11 @@ RUN pip3 uninstall -y auto-gptq && \
 # 直接clone会卡死，采用两步进行克隆
 # RUN  git clone https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat
 # RUN GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat && cd Llama2-Chinese-7b-Chat && git lfs pull && cd .. 
-RUN GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat
-RUN cd Llama2-Chinese-7b-Chat && git lfs pull && cd .. 
+RUN GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/FlagAlpha/Atom-7B-Chat
+RUN cd Atom-7B-Chat && git lfs pull && cd .. 
 
 #开启7860端口
 EXPOSE 7860
 
 #设置启动命令
-ENTRYPOINT ["python3", "examples/chat_gradio.py", "--model_name_or_path", "/root/Llama2-Chinese/Llama2-Chinese-7b-Chat/"]
+ENTRYPOINT ["python3", "examples/chat_gradio.py", "--model_name_or_path", "/root/Llama2-Chinese/Atom-7B-Chat/"]
